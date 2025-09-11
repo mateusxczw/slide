@@ -34,12 +34,24 @@ export default class Slide {
         ? event.clientX
         : event.changedTouches[0].clientX;
     const finalPosition = this.updatePosition(pointerPosition);
+    event.preventDefault();
+    this.dist.startX = event.clientX;
+    this.wrapper.addEventListener('mousemove', this.onMove);
+  }
+
+  onMove(event) {
+    const finalPosition = this.updatePosition(event.clientX);
+
     this.moveSlide(finalPosition);
   }
 
   onEnd(event) {
+
     const movetype = event.type === 'mouseup' ? 'mousemove' : 'touchmove';
     this.wrapper.removeEventListener(movetype, this.onMove);
+=======
+    this.wrapper.removeEventListener('mousemove', this.onMove);
+
     this.dist.finalPosition = this.dist.movePosition;
   }
 
