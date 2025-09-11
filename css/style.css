@@ -1,15 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
+body {
+  margin: 0px;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
 }
 
 img {
   display: block;
   max-width: 100%;
-}
-
-ul {
-  list-style: none;
 }
 
 .slide-wrapper {
@@ -25,8 +26,4 @@ ul {
   width: 80vw;
   max-width: 800px;
   margin: 0 20px;
-}
-
-.slide {
-  transform: translate3d(200px, 0, 0);
 }
